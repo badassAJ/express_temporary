@@ -1,8 +1,10 @@
+import 'dotenv/config'
+
 import express from 'express'
 
 const app = express()
 
-const port =3000
+const port = process.env.PORT || 3000
 
 // app.get("/", (req,res)=>{
 //     res.send("Hello from aditya")
@@ -69,3 +71,5 @@ app.delete('/teas/:id',(req,res)=>{
 app.listen(port,()=>{
     console.log(`Server is listening at port:${port}...`)
 })
+
+//to deploy we need to use environmwent variables instead of port
